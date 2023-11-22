@@ -21,11 +21,10 @@
     </script>
     <script src="{{url('../js/app.js')}}"></script>
     <script>
-        $(document).ready(funtion(){
+        $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-
 </head>
 
 <body>
@@ -34,7 +33,11 @@
         <div class="col1">@include('admin.sidebar')</div>
         <div class="col2">
             <nav class="navbar navbar-expand-lg shadow">
-                <div class="collapse navbar-collapse">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a href="{{ url('/admin')}}" class="nav-link"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a>
