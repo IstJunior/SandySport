@@ -3,7 +3,7 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ url('/admin/categories/1') }}"><i class="fa-sharp fa-solid fa-tags"></i>Categorías</a>
+        <a href="{{ url('/admin/categories') }}"><i class="fa-sharp fa-solid fa-tags"></i>Categorías</a>
     </li>
 @endsection
 

@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ url('/admin/categories') }}"><i class="fa-sharp fa-solid fa-tags"></i>Categorías</a>
+        <a href="{{ url('/admin/categories/1') }}"><i class="fa-sharp fa-solid fa-tags"></i>Categorías</a>
     </li>
     <li class="breadcrumb-item active">Editar Categoría</li>
 @endsection
@@ -12,7 +12,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6 offset-md-3"> <!-- Usa 'offset-md-3' para centrar en pantallas medianas -->
                 <div class="panel shadow">
                     <div class="header">
                         <h2 class="title"><i class="fa-sharp fa-solid fa-tags"></i>Editar Categoría</h2>
@@ -61,7 +61,7 @@
 
                         <div class="row mtop16">
                             <div class="col-md-12">
-                                {!! Form::submit('Guardar cambios', ['class' => 'btn btn-success']) !!}
+                                {!! Form::submit('Guardar cambios', ['class' => 'btn btn-success btn-block']) !!} <!-- Usa 'btn-block' para ocupar el ancho completo -->
                             </div>
                         </div>
 

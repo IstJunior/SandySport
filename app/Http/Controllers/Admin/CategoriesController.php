@@ -28,6 +28,29 @@ class CategoriesController extends Controller
     public function postCategoryAdd(Request $request)
     {
 
+        // Validaciones
+        $rules = [
+            'name' => 'required|min:3|max:20',
+            'module' => 'required',
+            'icon' => 'required',
+        ];
+
+        $messages = [
+            'name.required' => 'El nombre de la categoría es obligatorio.',
+            'module.required' => 'Seleccione un módulo.',
+            'icon.required' => 'El campo de icono es obligatorio.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/admin/categories/home')
+                ->withErrors($validator)
+                ->withInput()
+                ->with('typealert', 'danger');
+        }
+
+        // Guardar la nueva categoría
         $category = new Category;
         $category->name = $request->input('name');
         $category->module = $request->input('module');
@@ -40,7 +63,7 @@ class CategoriesController extends Controller
                 ->with('typealert', 'success');
         } else {
             return back()
-                ->with('message', 'Hubo un problema al guardar la categoría')
+                ->with('message', 'Ha habido un error')
                 ->with('typealert', 'danger');
         }
     }

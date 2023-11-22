@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Category;
 class ProductController extends Controller
 {
     public function __construct()
@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function getProductAdd(Request $request)
     {
-        return view('Admin.products.add');
+        $category = Category::where
     }
 
     public function edit($id)
